@@ -1,4 +1,4 @@
-import ExpenseItem from "./components/ExpenseItem";
+import Expenses from "./components/Expenses";
 
 function App() {
   const expenses = [
@@ -21,32 +21,20 @@ function App() {
       amount: 450,
       date: new Date(2021, 5, 12),
     },
+    {
+      id: "e5",
+      title: "MacBook M1 PRO",
+      amount: 3000000,
+      date: new Date(2022, 2, 7),
+    },
   ];
 
   return (
     // 커스텀 컴포넌트는 대문자로 시작하는게 국룰!
     <div>
       <h2>Let's get started!</h2>
-      <ExpenseItem
-        title={expenses[0].title}
-        amount={expenses[0].amount}
-        date={expenses[0].date}
-      ></ExpenseItem>
-      <ExpenseItem
-        title={expenses[1].title}
-        amount={expenses[1].amount}
-        date={expenses[1].date}
-      ></ExpenseItem>
-      <ExpenseItem
-        title={expenses[2].title}
-        amount={expenses[2].amount}
-        date={expenses[2].date}
-      ></ExpenseItem>
-      <ExpenseItem
-        title={expenses[3].title}
-        amount={expenses[3].amount}
-        date={expenses[3].date}
-      ></ExpenseItem>
+      <Expenses expenses={expenses}/>
+
     </div>
   );
 }
