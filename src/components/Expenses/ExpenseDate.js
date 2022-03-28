@@ -1,5 +1,5 @@
 import "./ExpenseDate.css";
-import Card from "./Card";
+import Card from "../UI/Card";
 
 function ExpenseDate(props) {
   const year = props.date.getFullYear();

@@ -1,5 +1,5 @@
 import React from "react";
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
 
 function App() {
   // 커스텀 컴포넌트는 대문자로 시작하는게 국룰!
@@ -32,11 +32,12 @@ function App() {
   ];
 
   // React.createElement(태그이름, 속성, 내용물)
+  // jsx에서 return시 가장 바깥에 태그 하나로 감싸야 했던 이유가 여기서 나옴
   return React.createElement(
     "div",
     {},
     React.createElement("h2", {}, "Let's get started!"),
-    React.createElement(Expenses, { expenses: expenses  })
+    React.createElement(Expenses, { expenses: expenses })
   );
 
   // return (

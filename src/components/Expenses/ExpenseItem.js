@@ -1,6 +1,6 @@
 import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
-import Card from "./Card";
+import Card from "../UI/Card";
 
 function ExpenseItem(props) {
   // return 에는 오직 하나의 root element만 있어야 한다.
