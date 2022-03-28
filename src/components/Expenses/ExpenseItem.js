@@ -11,7 +11,7 @@ const ExpenseItem = (props) => {
   // html태그의 속성값을 전달 받을 때: props 사용!! (각 컴포넌트의 파라미터는 오직 한 개만 존재해야 함)
 
   const [title, setTitle] = useState(props.title); // naming convention
-  //useState는 항상 2개의 return값을 배열 형태로 가짐. 
+  //useState는 항상 2개의 return값을 배열 형태로 가짐. 해당 컴포넌트 직속 산하에 존재 해야함
   //첫번째는 해당 변수의 값, 두번째는 해당 변수를 바꿀 수 있는 함수(중요!!)
 
   const clickHandler = () => {
