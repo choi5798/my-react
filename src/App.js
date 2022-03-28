@@ -1,7 +1,7 @@
 import React from "react";
 import Expenses from "./components/Expenses/Expenses";
 
-function App() {
+const App = () => {
   // 커스텀 컴포넌트는 대문자로 시작하는게 국룰!
   const expenses = [
     {
@@ -48,6 +48,6 @@ function App() {
 
   //   </div>
   // );
-}
+};
 
 export default App;
