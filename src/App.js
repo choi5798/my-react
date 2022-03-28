@@ -1,6 +1,8 @@
+import React from "react";
 import Expenses from "./components/Expenses";
 
 function App() {
+  // 커스텀 컴포넌트는 대문자로 시작하는게 국룰!
   const expenses = [
     {
       id: "e1",
@@ -29,14 +31,22 @@ function App() {
     },
   ];
 
-  return (
-    // 커스텀 컴포넌트는 대문자로 시작하는게 국룰!
-    <div>
-      <h2>Let's get started!</h2>
-      <Expenses expenses={expenses}/>
-
-    </div>
+  // React.createElement(태그이름, 속성, 내용물)
+  return React.createElement(
+    "div",
+    {},
+    React.createElement("h2", {}, "Let's get started!"),
+    React.createElement(Expenses, { expenses: expenses  })
   );
+
+  // return (
+  //
+  //   <div>
+  //     <h2>Let's get started!</h2>
+  //     <Expenses expenses={expenses}/>
+
+  //   </div>
+  // );
 }
 
 export default App;
