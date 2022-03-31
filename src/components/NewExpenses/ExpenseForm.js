@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -51,7 +51,7 @@ const ExpenseForm = () => {
       date: new Date(enteredDate),
     };
 
-    console.log(expenseData);
+    props.onSaveNewExpense(expenseData); // 부모(NewExpense)로 올리기!
     //2-way binding (form 사용시 유용): submit으로 값도 넘겨주고(value 속성) 그 후에 값 변경도 함(주로 clear)
     setEnteredTitle("");
     setEnteredAmount("");

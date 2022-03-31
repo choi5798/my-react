@@ -40,11 +40,20 @@ const App = () => {
   //   React.createElement("h2", {}, "Let's get started!"),
   //   React.createElement(Expenses, { expenses: expenses })
   // );
+  const saveNewExpenseHandler = newExpense => {
+
+    newExpense = {
+      ...newExpense,
+      id: Math.random().toString()
+    }
+    console.log('In App.js');
+    console.log(newExpense);
+  }
 
   return (
   
     <div>
-      <NewExpense></NewExpense>
+      <NewExpense onSaveNewExpense={saveNewExpenseHandler}></NewExpense>
       <Expenses expenses={expenses}/>
 
     </div>
