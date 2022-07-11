@@ -21,7 +21,7 @@ const ExpenseForm = (props) => {
     // });
     // 위와 같이 쓰면 비동기 때문에 서순 꼬일 우려가 있음
     // // 따라서 아래와 같이 콜백함수로 우선순위 부여
-    // setUserInput((prevState) => {
+    // setEnteredTitle((prevState) => {
     //   return { ...prevState, enteredTitle: event.target.value };
     // });
   };
@@ -51,7 +51,7 @@ const ExpenseForm = (props) => {
       date: new Date(enteredDate),
     };
 
-    props.onSaveNewExpense(expenseData); // 부모(NewExpense)로 올리기!
+    props.onSaveExpenseData(expenseData); // 부모(NewExpense)로 올리기!
     //2-way binding (form 사용시 유용): submit으로 값도 넘겨주고(value 속성) 그 후에 값 변경도 함(주로 clear)
     setEnteredTitle("");
     setEnteredAmount("");
