@@ -23,6 +23,7 @@ const Expenses = (props) => {
         ></ExpensesFilter>
         {props.items.map((expense) => (
           <ExpenseItem
+            key={expense.id} // 리스트 형식의 항목을 다룰 땐 key 속성을 반드시 추가하기
             title={expense.title}
             amount={expense.amount}
             date={expense.date}
