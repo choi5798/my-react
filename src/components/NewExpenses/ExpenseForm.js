@@ -58,8 +58,6 @@ const ExpenseForm = (props) => {
     setEnteredDate("");
   };
 
-  const clickCancelHandler = () => {};
-
   return (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
