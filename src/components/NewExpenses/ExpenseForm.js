@@ -6,7 +6,6 @@ const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
-  const [readyAddExpense, setReadyAddExpense] = useState(props.readyAddExpense);
   // useState를 여러개 쓰는것은 자기 맘이지만 어차피 목적(입력 데이터 처리)이 같은 애들은 하나로 묶는게 더 낫다
   //   const [userInput, setUserInput] = useState({
   //     enteredTitle: "",
@@ -59,60 +58,48 @@ const ExpenseForm = (props) => {
     setEnteredDate("");
   };
 
-  const clickCancelHandler = (event) => {
-    setReadyAddExpense(false);
-    console.log("취소 버튼 클릭");
-  };
+  const clickCancelHandler = () => {};
 
-  const readyAddExpenseHandler = (event) => {
-    setReadyAddExpense(true);
-    console.log("만들기 버튼 클릭");
-  };
-
-  if (!readyAddExpense) {
-    return <button onClick={readyAddExpenseHandler}>지출 항목 만들기</button>;
-  } else {
-    return (
-      <form onSubmit={submitHandler}>
-        <div className="new-expense__controls">
-          <div className="new-expense__control">
-            <label>품목</label>
-            <input
-              type="text"
-              value={enteredTitle}
-              onChange={titleChangeHandler}
-            ></input>
-          </div>
-          <div className="new-expense__control">
-            <label>비용</label>
-            <input
-              type="number"
-              min="0.01"
-              step="0.01"
-              value={enteredAmount}
-              onChange={amountChangeHandler}
-            ></input>
-          </div>
-          <div className="new-expense__control">
-            <label>날짜</label>
-            <input
-              type="date"
-              min="2019-01-01"
-              max="2022-12-31"
-              value={enteredDate}
-              onChange={dateChangeHandler}
-            ></input>
-          </div>
+  return (
+    <form onSubmit={submitHandler}>
+      <div className="new-expense__controls">
+        <div className="new-expense__control">
+          <label>품목</label>
+          <input
+            type="text"
+            value={enteredTitle}
+            onChange={titleChangeHandler}
+          ></input>
         </div>
-        <div className="new-expense__actions">
-          <button type="button" onClick={clickCancelHandler}>
-            취소
-          </button>
-          <button type="submit">지출 항목 추가</button>
+        <div className="new-expense__control">
+          <label>비용</label>
+          <input
+            type="number"
+            min="0.01"
+            step="0.01"
+            value={enteredAmount}
+            onChange={amountChangeHandler}
+          ></input>
         </div>
-      </form>
-    );
-  }
+        <div className="new-expense__control">
+          <label>날짜</label>
+          <input
+            type="date"
+            min="2019-01-01"
+            max="2022-12-31"
+            value={enteredDate}
+            onChange={dateChangeHandler}
+          ></input>
+        </div>
+      </div>
+      <div className="new-expense__actions">
+        <button type="button" onClick={props.onCancel}>
+          취소
+        </button>
+        <button type="submit">지출 항목 추가</button>
+      </div>
+    </form>
+  );
 };
 
 export default ExpenseForm;
