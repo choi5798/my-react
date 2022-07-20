@@ -4,6 +4,7 @@ import "./Expenses.css";
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
 import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
 
 const Expenses = (props) => {
   // 실제로 dumb component(state가 없는 멍청이 컴포넌트)가 stateful componenet보다 훨씬 많이 쓰인다
@@ -29,6 +30,7 @@ const Expenses = (props) => {
         ></ExpensesFilter>
         {/* {filteredExpenses.length === 0 && <p>No expenses found.</p>} */}
         {/*js 의 트릭 : && 앞의 조건이 만족하면 뒤에 있는 값을 return 한다 => abusing */}
+        <ExpensesChart expenses={filteredExpenses} />
         <ExpensesList items={filteredExpenses}/>
       </Card>
     </li>

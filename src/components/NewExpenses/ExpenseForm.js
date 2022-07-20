@@ -47,7 +47,7 @@ const ExpenseForm = (props) => {
 
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount, // string의 덧셈 -> number의 덧셈
       date: new Date(enteredDate),
     };
 
